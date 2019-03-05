@@ -104,7 +104,7 @@ def run(args):
 
 def main():
     parser=argparse.ArgumentParser(description="Combine the pairwise forward and reverse primers from two wells of 96 well plate into one, thus merge two plates into one")
-    parser.add_argument("-in",help="input .csv file with columns named 'plateN', 'wellPos', 'seqName'; default number of plates is even and plates start from plate 1;default that data starts from the first line (doesn't have column name)" ,dest="input", type=str, required=True)
+    parser.add_argument("-in",help="input .csv file with column1: plate ID (plateN), column 6: well position(wellPos), column 7: sequence name (seqName); default number of plates is even and plates start from plate 1;default that data starts from the first line (doesn't have column name)" ,dest="input", type=str, required=True)
     parser.add_argument("-out",help="merged plates output .csv filename" ,dest="output", type=str, required=True)
     #parser.add_argument("-q",help="Quality score to fill in (since fasta doesn't have quality scores but fastq needs them. Default=I" ,dest="quality_score", type=str, default="I")
     parser.set_defaults(func=run)
